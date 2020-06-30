@@ -1,0 +1,40 @@
+/* Room Capacity Program
+ * By William Danielson Jr
+ * Copyright 2020
+ */
+
+using System;
+
+namespace RoomCapacity
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How many people can the room hold?");
+            int maxPeople = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("How many people are coming?");
+            int numPeople = Convert.ToInt32(Console.ReadLine());
+
+
+            if (maxPeople > numPeople)
+            {
+                Console.WriteLine("This many more people can come in: " + (maxPeople - numPeople));
+                Console.ReadKey();
+            }
+
+            if (maxPeople == numPeople)
+            {
+                Console.WriteLine("No one else can come in.");
+                Console.ReadKey();
+            }
+
+            else
+            {
+                Console.WriteLine("There are too many people!" + (numPeople - maxPeople) + " " + "people need to leave!");
+                Console.ReadKey();
+            }
+        }
+    }
+}
