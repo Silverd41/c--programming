@@ -1,0 +1,41 @@
+/*Speed Trap Calculator
+ * William Danielson Jr
+ * Copyright 2020
+ */
+
+using System;
+
+namespace SpeedTrap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("what is the speed limit?");
+            int speedLimit = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("How fast was the car going?");
+            int carSpeed = Convert.ToInt32(Console.ReadLine());
+
+            int speedDiff = carSpeed - speedLimit;
+            int demerits = speedDiff/5;
+
+            if (speedLimit > carSpeed)
+            {
+                Console.WriteLine("OK!");
+            }
+
+            if (speedLimit < carSpeed)
+            {
+                Console.WriteLine(demerits + " demerits earned!");
+            }
+
+            if (demerits > 12)
+            {
+                Console.WriteLine("License Suspended!");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
