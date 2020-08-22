@@ -1,0 +1,26 @@
+/*Basic Calculator
+ * William Danielson
+ * Copyright 2020
+ */ 
+
+using System;
+
+namespace AddTwoNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("What is the first number?");
+            int numOne = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("What is the second number?");
+            int numTwo = Convert.ToInt32(Console.ReadLine());
+
+            int sum = numOne + numTwo;
+
+            Console.WriteLine(numOne + " + " + numTwo + " = " + sum);
+            Console.ReadKey();
+        }
+    }
+}
