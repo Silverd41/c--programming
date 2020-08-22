@@ -1,0 +1,33 @@
+/* Picture Orientation Program
+ * By William Danielson Jr
+ * Copyright 2020
+ */
+
+using System;
+
+namespace PhotoOrientation
+{
+    class Program
+    {
+        static void Main(string[] arqs)
+        {
+            Console.WriteLine("What is the height of the picture?");
+            int picHeight = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("What is the width of the picture?");
+            int picWidth = Convert.ToInt32(Console.ReadLine());
+
+            if (picHeight > picWidth)
+            {
+                Console.WriteLine("Portrait"); 
+            }
+
+            else
+            {
+                Console.WriteLine("Landscape");                
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
