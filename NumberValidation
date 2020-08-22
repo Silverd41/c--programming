@@ -1,0 +1,35 @@
+/* Number Validation Program
+ * By William Danielson Jr
+ * Copyright 2020
+ */
+using System;
+
+namespace NumberValidation
+{
+    class Program
+    {
+        static void Main(string[] arqs)
+        {
+            //Requests input from the user
+            Console.WriteLine("Please enter a number between 1 and 10.");
+            int numberInput = Convert.ToInt32(Console.ReadLine()); ;
+            if (numberInput > 0)
+            {
+                if (numberInput <= 10)
+                {
+                    Console.WriteLine("Valid");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+                Console.ReadKey();
+            }
+        }
+    }
+}
