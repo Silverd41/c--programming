@@ -1,0 +1,31 @@
+/*OKSum
+ * William Danielson Jr
+ * Copyright 2020
+ */
+
+using System;
+
+namespace OKSum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var sum = 0;
+
+            while (true)
+            {
+                Console.WriteLine("Enter a number or type 'ok' to exit.");
+                var input = Console.ReadLine();
+
+                if (input.ToLower() == "ok") //Exit clause.
+                    break;
+
+                sum += Convert.ToInt32(input); //Adds each numeric input to the "sum" variable.
+            }
+
+            Console.WriteLine("Your total was " + sum + "!");
+            Console.ReadKey();
+        }
+    }
+}
