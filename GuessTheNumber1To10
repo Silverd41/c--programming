@@ -1,0 +1,47 @@
+/*Guess the Number 1 to 10
+ * William Danielson Jr
+ * Copyright 2020
+ */
+
+using System;
+
+namespace GuessTheNumber1To10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numGuesses = 4;
+            
+
+            Random random = new Random(); //Initializes the Random instance
+            int number = random.Next(1, 11); //Defines the parameters and sets the number as an int
+            //Console.WriteLine(number); //For testing purposes only!
+
+            Console.WriteLine("Please guess the number between 1 and 10.");
+            int userGuess = Convert.ToInt32(Console.ReadLine());
+
+            if (userGuess == number)
+            {
+                Console.WriteLine("You Win!");
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+                return;
+            }
+
+            while (numGuesses > 0)
+            {
+                if(userGuess != number & numGuesses > 0)
+                {
+                numGuesses--;
+                Console.WriteLine("Wrong! " + numGuesses + " left. Guess again.");
+                Console.ReadLine();
+                }              
+            }
+
+            Console.WriteLine("No Guesses left! The number was " + number + "! You Lose!");
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadLine();
+        }
+    }
+}
