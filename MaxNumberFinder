@@ -1,0 +1,36 @@
+/* Max Number Finder
+ * William Danielson
+ * Copyright 2020
+ */
+
+using System;
+using System.Linq;
+
+namespace MaxNumberFinder
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declare variables
+            int i = 0;
+            int large = 0;
+
+            Console.WriteLine("Please input numbers. \nRemember to seperate each number with a ','");
+            var userInput = Console.ReadLine().Split(','); //Looks for inputs seperated by a ","
+
+            int[] numArray = userInput.Select(d => Convert.ToInt32(d)).ToArray(); //Converts var to int and stores it in an array
+            large = numArray[0];
+
+            //Compares each number in the array to find which is the largest
+            for (i = 1; i <numArray.Length; i++)
+            {
+                if (large < numArray[i])
+                    large = numArray[i];
+            }
+            //Prints the largest number to the console
+            Console.WriteLine("The maximum number is: " + large +"\nPress any key to continue...");
+            Console.ReadKey();
+        }
+    }
+}
