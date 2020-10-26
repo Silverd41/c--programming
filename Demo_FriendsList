@@ -1,0 +1,48 @@
+/*Friends List
+ * William Danielson Jr
+ * Copyright 2020
+ */
+
+using System;
+using System.Collections.Generic;
+
+namespace Demo_FriendList
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string friendName;
+            var friendList = new List<string>(); //declare and initialize the list
+
+            while (true)
+            {
+                Console.WriteLine("Enter the name of a friend or hit enter.");
+                friendName = Console.ReadLine();
+
+                friendList.Add(friendName); //adds the user inputs to the list
+
+                if (friendName.ToLower() == "") //Escape Clause
+                    break;
+            }
+
+            if (friendList.Count == 1)
+            {
+                Console.WriteLine("You have no friends!");
+            }
+
+            if (friendList.Count == 2)
+            {
+                friendList.ForEach(Console.WriteLine); //displays each item in the list
+            }
+
+            if (friendList.Count >= 3)
+            {
+                Console.WriteLine("You have " + friendList.Count + " friends");
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+    }
+}
