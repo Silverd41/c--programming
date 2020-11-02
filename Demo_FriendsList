@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace Demo_FriendList
 {
@@ -14,7 +15,7 @@ namespace Demo_FriendList
         {
             string friendName;
             var friendList = new List<string>(); //declare and initialize the list
-
+            
             while (true)
             {
                 Console.WriteLine("Enter the name of a friend or hit enter.");
@@ -26,19 +27,29 @@ namespace Demo_FriendList
                     break;
             }
 
+            if (friendList.Count == 0)
+            {
+                friendList.RemoveAt(0);
+                Console.WriteLine();
+            }
+
             if (friendList.Count == 1)
             {
-                Console.WriteLine("You have no friends!");
+                Console.WriteLine(friendList[0] + " likes this.");
             }
 
             if (friendList.Count == 2)
             {
-                friendList.ForEach(Console.WriteLine); //displays each item in the list
+                Console.WriteLine(friendList[0] + ", " + friendList[1] + " likes this.");
             }
 
-            if (friendList.Count >= 3)
+            if (friendList.Count > 3)
             {
-                Console.WriteLine("You have " + friendList.Count + " friends");
+                friendList.RemoveAt(0);
+                Console.Write(friendList[0] + ", " + friendList[1] + ", and ");
+                friendList.RemoveAt(0);
+                friendList.RemoveAt(0);
+                Console.WriteLine(friendList.Count + " others like this.");
             }
 
             Console.WriteLine("Press any key to continue...");
