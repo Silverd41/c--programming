@@ -1,0 +1,33 @@
+/*Name Reverser 
+ * William Danielson 
+ * Copyright 2020 
+ */
+
+using System;
+
+namespace NameReverse
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string userInput;
+
+            Console.WriteLine("Please type in your name."); //gets user's name
+            userInput = Console.ReadLine(); //store user name in the variable
+
+            char[] charArray = userInput.ToCharArray(); //stores the userInput into a character array
+
+            // reverses the array
+            Array.Reverse(charArray);
+
+            string name = new string (charArray); // Stores the new array in a string variable
+
+            Console.Write("Reversed name: " + name);
+
+            Console.WriteLine("\nPress any key to end...");
+            Console.ReadKey();
+
+        }
+    }
+}
