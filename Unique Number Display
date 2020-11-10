@@ -1,0 +1,47 @@
+/* Unique Number Display
+ * Takes in user input &
+ * displays each unique number
+ * William Danielson 
+ * Copyright 2020 
+ */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace UniqueNumberDisplay
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var numbers = new List<int>();
+
+            while (true)
+            {
+                Console.WriteLine("Please enter a number or type ''quit to exit.");
+
+                var input = Console.ReadLine();
+                    
+                //Exit clause
+                if (input.ToLower() == "quit") 
+                    break;
+
+                //converts input to an int and adds the number to the list
+                numbers.Add(Convert.ToInt32(input)); 
+            }
+
+            //Puts the unique numbers from list 1 into a new list
+            List<int> uniqueNumbers = numbers.Distinct().ToList();
+
+            Console.Write("The unique numbers are: ");
+
+            //Prints each item from the new list
+            foreach (var number in uniqueNumbers)
+                Console.Write(number + ", ");
+
+            //Ends the program
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+        }
+    }
+}
