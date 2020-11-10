@@ -1,0 +1,50 @@
+/* Five Unique Numbers
+ * Sort and order 5 numbers
+ * Each number is unique
+ * William Danielson 
+ * Copyright 2020 
+ */
+
+using System;
+using System.Collections.Generic;
+
+namespace FiveUniqueNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declare new list and initialize an instance of it
+            var numbers = new List<int>();
+
+
+            while (numbers.Count < 5)
+            {
+                //Request user input
+                Console.WriteLine("Please enter a number.");
+                //Put user input into a local variable called "number"
+                var number = Convert.ToInt32(Console.ReadLine());
+                //Checks the user input and compares it to numbers in the list
+                if (numbers.Contains(number))
+                {
+                    Console.WriteLine("You've previously entered " + number);
+                    continue;
+                }
+                
+                numbers.Add(number); //Adds the number to the list
+            }
+
+            //Sorts the numbers from smallest to largest
+            numbers.Sort();
+            Console.WriteLine("\n");
+
+            //Prints each object in list
+            foreach (var number in numbers)
+                Console.WriteLine("Number: " + number);
+
+            //Ends the program
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+        }
+    }
+}
